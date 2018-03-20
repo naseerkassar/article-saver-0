@@ -1,8 +1,18 @@
-@import 'base/reset';
+@import "base/reset";
 // @import 'base/fonts';
-@import 'base/mixins';
-@import 'base/variables';
+@import "base/mixins";
+@import "base/variables";
 
-body{
-    background-color: $bodybg;
+#container {
+  display: flex;
+}
+#searchSection {
+  background-color: red;
+  width: 900px;
+  height: 900px;
+}
+#savedArticles {
+  background-color: blue;
+  width: 900px;
+  height: 900px;
 }

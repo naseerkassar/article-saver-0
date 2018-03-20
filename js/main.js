@@ -1,9 +1,6 @@
-import axios from "axios";
-axios
-  .get("https://vtm.be/feed/articles/solr?format=json&query=michael,jackson")
-  .then(function(response) {
-    console.log(response);
-  })
-  .catch(function(error) {
-    console.log(error);
-  });
+//import SearchArticle from "./components/SearchArticle";
+import SavedArticle from "./components/SavedArticle";
+const savedArticles = [];
+const SavedArticlesHolder = document.getElementById("SavedArticlesHolder");
+//const searchArticlesHolder = document.getElementById("searchArticlesHolder");
+const savedArticle = new SavedArticle(savedArticlesHolder, savedArticles);

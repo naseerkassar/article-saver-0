@@ -1,5 +1,5 @@
 {
-  "name": "projectname",
+  "name": "articlsaver",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -12,7 +12,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.18.0"
+    "axios": "^0.18.0",
+    "firebase": "^4.11.0"
   },
   "devDependencies": {
     "autoprefixer": "^7.2.5",
