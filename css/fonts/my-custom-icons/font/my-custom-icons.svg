@@ -1,12 +1,16 @@
 <?xml version="1.0" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns="http://www.w3.org/2000/svg">
-<metadata>Copyright (C) 2017 by original authors @ fontello.com</metadata>
+<metadata>Copyright (C) 2018 by original authors @ fontello.com</metadata>
 <defs>
 <font id="my-custom-icons" horiz-adv-x="1000" >
 <font-face font-family="my-custom-icons" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
 <missing-glyph horiz-adv-x="1000" />
-<glyph glyph-name="target" unicode="&#xe001;" d="M0 274l0 152 131 0q21 110 102 191t191 102l0 131 152 0 0-131q110-21 191-102t102-191l131 0 0-152-131 0q-21-109-102-191t-191-102l0-131-152 0 0 131q-110 21-191 102t-102 191l-131 0z m231 0q19-70 71-122t122-71l0 146 152 0 0-146q70 19 122 71t72 122l-147 0 0 152 147 0q-20 71-72 122t-122 72l0-147-152 0 0 147q-70-20-122-72t-71-122l146 0 0-152-146 0z" horiz-adv-x="1000" />
+<glyph glyph-name="spin6" unicode="&#xe800;" d="M855 9c-189-190-520-172-705 13-190 190-200 494-28 695 11 13 21 26 35 34 36 23 85 18 117-13 30-31 35-76 16-112-5-9-9-15-16-22-140-151-145-379-8-516 153-153 407-121 542 34 106 122 142 297 77 451-83 198-305 291-510 222l0 1c236 82 492-24 588-252 71-167 37-355-72-493-11-15-23-29-36-42z" horiz-adv-x="1000" />
+
+<glyph glyph-name="trash" unicode="&#xe801;" d="M50 458q122-70 330-70t330 70l-54-486q-2-14-35-36t-100-43-141-21-140 21-100 43-36 36z m488 300q94-18 158-55t64-71l0-10q0-58-112-99t-268-41-268 41-112 99l0 10q0 34 64 71t158 55l42 48q22 26 70 26l92 0q52 0 70-26z m-54-112l84 0q-92 110-104 126-14 16-32 16l-102 0q-22 0-32-16l-106-126 84 0 64 66 82 0z" horiz-adv-x="760" />
+
+<glyph glyph-name="heart" unicode="&#xe802;" d="M0 530q0 103 73 176t177 73q70 0 128-34t91-93q32 58 90 93t128 34q103 0 177-73t73-176q0-95-63-166l-343-403q-25-31-62-31t-63 31l-343 403q-63 71-63 166z" horiz-adv-x="937.5" />
 </font>
 </defs>
 </svg>

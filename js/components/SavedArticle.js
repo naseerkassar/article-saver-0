@@ -35,8 +35,13 @@ export default class SavedArticle {
     data.once("value", snapshot => {
       var result = snapshot.val();
       for (var prop in result) {
-        var id = this.savedArticles.push(result[prop]);
-        const savedListItem = new SavedListItem(id, this.list);
+        const id = result[prop]; //5123485
+        this.savedArticles.push(id);
+        const savedListItem = new SavedListItem(
+          id,
+          this.list,
+          this.savedArticles
+        );
       }
     });
   }

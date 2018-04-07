@@ -1,18 +1,68 @@
 @import "base/reset";
-// @import 'base/fonts';
+@import "base/fonts";
 @import "base/mixins";
 @import "base/variables";
-
-#container {
-  display: flex;
-}
-#searchSection {
-  background-color: red;
-  width: 900px;
-  height: 900px;
-}
-#savedArticles {
-  background-color: blue;
-  width: 900px;
-  height: 900px;
+body {
+  background-image: url("../images/news2.jpg");
+  #container {
+    margin: 100px;
+    display: flex;
+    font-variant: normal;
+    text-transform: none;
+    background-image: url("../images/news1.jpg");
+  }
+  #searchSection {
+    background-color: red;
+    width: 700px;
+    height: 700px;
+  }
+  #savedArticlesHolder {
+    width: 700px;
+    height: 700px;
+    #articlesHolder {
+      h1 {
+        text-align: center;
+        font-size: 40px;
+        font-family: "Abril Fatface", cursive;
+        padding: 30px;
+        color: rgb(230, 118, 7);
+      }
+      ul {
+        padding: 30px;
+      }
+    }
+  }
+  #loading {
+    display: none;
+    font-size: 50px;
+    position: relative;
+    color: lightblue;
+    right: 368px;
+    top: 70px;
+    z-index: 1000;
+  }
+  .article {
+    height: 140px;
+    width: 600px;
+    border: 1px solid black;
+    position: relative;
+    background-color: rgba(250, 200, 150, 0.9);
+    img {
+      float: left;
+      margin: 13px;
+    }
+    p {
+      padding: 13px;
+      font-size: 20px;
+    }
+    a {
+      position: absolute;
+      right: 5px;
+      top: 5px;
+    }
+    h2 {
+      font-family: "Abril Fatface", cursive;
+      text-transform: capitalize;
+    }
+  }
 }
