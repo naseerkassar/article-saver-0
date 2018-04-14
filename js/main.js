@@ -16,7 +16,7 @@ const savedArticles = [];
 const SavedArticlesHolder = document.getElementById("SavedArticlesHolder");
 const searchArticlesHolder = document.getElementById("searchArticlesHolder");
 
-const savedArticle = new SavedArticle(
+const savedArticleInstance = new SavedArticle(
   savedArticlesHolder,
   savedArticles,
   firebase
@@ -24,5 +24,7 @@ const savedArticle = new SavedArticle(
 const searchArticle = new SearchArticle(
   savedArticles,
   searchArticlesHolder,
+  savedArticleInstance.list, // this is the UL from the right component (we need it so we know where to add when we click the heart)
+  // this is the reason why I said to start with the right component, so you then have the instance where you can get the list from ;-)
   firebase
 );

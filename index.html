@@ -8,17 +8,24 @@
   <title>...</title>
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 
 <body>
 
   <div id="container">
     <div id="searchArticlesHolder">
+      <div id="SearchLoading">
+        <i class="fa fa-circle-o-notch fa-spin" style="font-size:30px"></i>
+      </div>
     </div>
-    <div id="savedArticlesHolder"></div>
-    <div id="loading">
-      <i class="fa fa-circle-o-notch fa-spin" style="font-size:30px"></i>
+
+    <div id="savedArticlesHolder">
+      <div id="saveLoading">
+        <i class="fa fa-circle-o-notch fa-spin" style="font-size:30px"></i>
+      </div>
     </div>
+
   </div>
   <script src="./js/main.js"></script>
 </body>

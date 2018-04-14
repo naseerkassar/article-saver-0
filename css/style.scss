@@ -9,11 +9,24 @@ body {
     display: flex;
     font-variant: normal;
     text-transform: none;
-    background-image: url("../images/news1.jpg");
+    background-color: rgba(255, 255, 255, 0.9);
+    height: 2000px;
   }
   #searchArticlesHolder {
+    position: relative;
     width: 700px;
     height: 700px;
+    .active {
+      color: red;
+    }
+    #SearchLoading {
+      position: relative;
+      display: none;
+      left: 300px;
+      top: 120px;
+      color: lightblue;
+      z-index: 1000;
+    }
     h1 {
       text-align: center;
       font-size: 40px;
@@ -33,8 +46,35 @@ body {
         height: 40px;
       }
     }
+    #searchResults {
+      ul {
+        padding: 30px;
+        li {
+          height: 175px;
+          h2 {
+            font-family: "Abril Fatface", cursive;
+            text-transform: capitalize;
+            text-align: left;
+            padding-left: 226px;
+            margin-top: 15px;
+          }
+          p {
+            font-size: 16px;
+          }
+
+          img {
+            width: 200px;
+            height: 113px;
+            display: block;
+            float: left;
+            margin-top: -15px;
+          }
+        }
+      }
+    }
   }
   #savedArticlesHolder {
+    position: relative;
     width: 700px;
     height: 700px;
     #savedResults {
@@ -49,15 +89,14 @@ body {
         padding: 30px;
       }
     }
-  }
-  #loading {
-    display: none;
-    font-size: 50px;
-    position: relative;
-    color: lightblue;
-    right: 358px;
-    top: 87px;
-    z-index: 1000;
+    #saveLoading {
+      display: none;
+      position: absolute;
+      color: lightblue;
+      right: 358px;
+      top: 87px;
+      z-index: 1000;
+    }
   }
   .article {
     height: 140px;
@@ -85,5 +124,89 @@ body {
       font-family: "Abril Fatface", cursive;
       text-transform: capitalize;
     }
+  }
+  .popupS-layer {
+    -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+    position: relative;
+    border-radius: 6px;
+    background-color: #fff;
+    margin: 20px;
+    z-index: 1000;
+  }
+  .popupS-resetFocus {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  .popupS-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    line-height: 40px;
+    font-size: 32px;
+    text-align: center;
+    font-weight: 700;
+    width: 32px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 1020;
+  }
+  .popupS-title {
+    position: absolute;
+    width: 100%;
+    line-height: 40px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0 auto;
+    z-index: 1001;
+  }
+  .popupS-title + .popupS-content {
+    padding-bottom: 20px;
+  }
+  .popupS-content {
+    max-width: 700px;
+    padding: 40px;
+    border-radius: 6px;
+  }
+  .popupS-content img {
+    max-width: 100%;
+    height: auto;
+  }
+  .popupS-layer .btn {
+    float: right;
+  }
+
+  /*
+ * Default Animation
+ * very Important
+ */
+
+  .popupS-layer {
+    -webkit-transition: opacity 0.3s;
+    -o-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+    opacity: 0;
+  }
+  .popupS-overlay {
+    -webkit-transition: opacity 0.3s ease;
+    -o-transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease;
+    background: rgb(0, 0, 0);
+    opacity: 0;
+  }
+  .popupS-layer.popupS-open {
+    opacity: 1;
+  }
+  .popupS-open > .popupS-overlay {
+    opacity: 0.6;
   }
 }

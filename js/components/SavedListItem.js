@@ -1,21 +1,23 @@
 import axios from "axios";
-import * as firebase from "firebase";
+import SearchArticle from "./SearchArticle";
+
 export default class SavedListItem {
-  constructor(id, list, savedArticles) {
+  constructor(id, list, savedArticles, firebase) {
     this.id = id;
     this.list = list;
     this.savedArticles = savedArticles;
+    this.firebase = firebase;
     this.article = "";
-    this.html = "";
+    this.savedListHtml = "";
     this.getDataSavedId();
   }
   getDataSavedId() {
-    document.getElementById("loading").style.display = "block";
+    document.getElementById("saveLoading").style.display = "block";
     axios
       .get("https://nieuws.vtm.be/feed/articles?format=json&ids=" + this.id)
       .then(response => {
         this.article = response.data.response.items[0];
-        document.getElementById("loading").style.display = "none";
+        document.getElementById("saveLoading").style.display = "none";
         this.getArticleInfo();
       })
       .catch(function(error) {
@@ -23,13 +25,14 @@ export default class SavedListItem {
       });
   }
   getArticleInfo() {
-    this.html = `<li class="article" data-id="${this.article.id}" id="saved-${
+    this.savedListHtml = `<li class="article" data-id="${
       this.article.id
-    }">
+    }" id="saved-${this.article.id}">
     <img src="${this.article.image.thumb}" alt="">
     <p>${this.article.created.formatted}</p>
     <h2>${this.article.title}</h2>
-    <a href="" class="fa">&#xf014; </a></li>`;
-    this.list.insertAdjacentHTML("beforeend", this.html);
+    <a href="" class="fa">&#xf014;</a></li>`;
+    this.list.insertAdjacentHTML("beforeend", this.savedListHtml);
+    //console.log(this.list);
   }
 }
