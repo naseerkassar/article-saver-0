@@ -1,7 +1,7 @@
 import axios from "axios";
-
 import SearchListItem from "./SearchListItem";
 import SavedListItem from "./SavedListItem";
+const popupS = require("popups");
 export default class SearchArticle {
   constructor(savedArticles, searchArticlesHolder, saveList, firebase) {
     this.savedArticles = savedArticles;
@@ -63,6 +63,33 @@ export default class SearchArticle {
   }
 
   handleAdd(e) {
+    //set the event listener to the SearchListItem (li) for the popups
+    if (
+      e.target.nodeName == "H2" ||
+      e.target.nodeName == "IMG" ||
+      e.target.nodeName == "P"
+    ) {
+      this.liId = e.target.parentElement.dataset.id;
+
+      axios
+        .get(
+          "https://nieuws.vtm.be/feed/articles?format=json&fields=html&ids=" +
+            this.liId
+        )
+        .then(response => {
+          this.article = response.data.response.items[0];
+          //console.log(this.article);
+          popupS.modal({
+            content: `<h2>${this.article.title}</h2>
+          <img src="${this.article.image.large}"></img>
+          <p>${this.article.text_html}</p>`
+          });
+        })
+
+        .catch(function(error) {
+          console.log(error);
+        });
+    }
     // console.log(e);
     if (e.target.nodeName == "A") {
       let id = parseInt(e.target.parentElement.dataset.id);

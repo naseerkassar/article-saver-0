@@ -28,24 +28,28 @@ export default class SavedArticle {
 
   handleSavedItems(e) {
     if (e.target.nodeName == "A") {
-      e.preventDefault();
       const id = e.target.parentElement.dataset.id;
-      e.target.parentElement.remove();
-
-      /*
-      this.savedArticles = this.savedArticles.filter(function(el) {
-        return el != id;
-      });
-      */
+      const targetClass = document.querySelector(`#search-${id} a`);
+      e.preventDefault();
+      //remove from Arry and set it to the firebase
       const locationOfId = this.savedArticles.indexOf(id);
       this.savedArticles.splice(locationOfId, 1);
-      console.log(this.savedArticles);
+      //console.log(this.savedArticles);
       this.firebase
         .database()
         .ref("articles")
         .set(this.savedArticles);
+      //remove element (li) from DOM
+      e.target.parentElement.remove();
+      //when heart is red => make it unSaved and black again
+      targetClass.classList.remove("active");
     }
-    if (e.target.nodeName == "H2" || e.target.nodeName == "IMG") {
+    //set the event listener to the SavidListItem (li) for the popups
+    if (
+      e.target.nodeName == "H2" ||
+      e.target.nodeName == "IMG" ||
+      e.target.nodeName == "P"
+    ) {
       this.liId = e.target.parentElement.dataset.id;
 
       axios
@@ -55,7 +59,7 @@ export default class SavedArticle {
         )
         .then(response => {
           this.article = response.data.response.items[0];
-          console.log(this.article);
+          //console.log(this.article);
           popupS.modal({
             content: `<h2>${this.article.title}</h2>
           <img src="${this.article.image.large}"></img>
