@@ -1,6 +1,7 @@
 import axios from "axios";
 import SearchListItem from "./SearchListItem";
 import SavedListItem from "./SavedListItem";
+import { clearImmediate } from "timers";
 const popupS = require("popups");
 export default class SearchArticle {
   constructor(savedArticles, searchArticlesHolder, saveList, firebase) {
@@ -15,11 +16,10 @@ export default class SearchArticle {
     this.articles = "";
     this.generateHTML();
   }
-
   generateHTML() {
     this.searchHtml = `<h1>Search for your articel</h1>
     <form action="" id="form">
-      <input type="text" id="field" value="" placeholder=" Search">
+      <input type="text" id="field" value="" onfocus="this.value=''" placeholder=" Search" autofocus>
       <input type="submit" id="submit" value="Submit">
     </form>
     <div id="searchResults">
@@ -27,12 +27,13 @@ export default class SearchArticle {
     this.searchArticlesHolder.insertAdjacentHTML("beforeend", this.searchHtml);
     this.form = this.searchArticlesHolder.querySelector("form");
     this.ul = this.searchArticlesHolder.querySelector("ul");
-
+    //adding event listener
     this.form.addEventListener("submit", this.performSearch.bind(this));
     this.ul.addEventListener("click", this.handleAdd.bind(this));
   }
   performSearch(e) {
     e.preventDefault();
+    this.ul.innerHTML = "";
     this.value = document.getElementById("field").value;
     document.getElementById("SearchLoading").style.display = "block";
     axios

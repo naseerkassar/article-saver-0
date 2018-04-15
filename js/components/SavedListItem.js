@@ -25,7 +25,7 @@ export default class SavedListItem {
       });
   }
   getArticleInfo() {
-    this.savedListHtml = `<li class="article" data-id="${
+    this.savedListHtml = `<li class="savedArticle" data-id="${
       this.article.id
     }" id="saved-${this.article.id}">
     <img src="${this.article.image.thumb}" alt="">

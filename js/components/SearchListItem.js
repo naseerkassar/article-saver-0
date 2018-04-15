@@ -14,7 +14,7 @@ export default class SearchListItem {
   }
   generateHTML() {
     const html = `
-      <li class="article" data-id="${
+      <li class="searchArticle" data-id="${
         this.article.fields.entity_id
       }" id="search-${this.article.fields.entity_id}">
         <h2>${this.article.node.label}</h2>
