@@ -17,10 +17,10 @@ export default class SearchArticle {
     this.generateHTML();
   }
   generateHTML() {
-    this.searchHtml = `<h1>Search for your articel</h1>
+    this.searchHtml = `<h1>Search for article</h1>
     <form action="" id="form">
       <input type="text" id="field" value="" onfocus="this.value=''" placeholder=" Search" autofocus>
-      <input type="submit" id="submit" value="Submit">
+      <input type="submit" id="submit" value="search">
     </form>
     <div id="searchResults">
     <ul></ul></div>`;
