@@ -10,7 +10,6 @@ body {
     justify-content: space-around;
     flex-wrap: wrap;
     text-transform: none;
-    //background-color: rgba(0, 0, 0, 0.582);
     background-color: rgba(47, 47, 47, 0.815);
     border-radius: 10px;
     width: 1400px;
@@ -229,30 +228,152 @@ body {
       }
     }
   }
-  // @media only screen and (max-width: 1290px) {
-  //   #container {
-  //     display: flex;
-  //     flex-direction: column;
-  //     justify-content: space-between;
-  //     align-items: center;
-  //     #searchArticlesHolder {
-  //       width: 80%;
-  //     }
-  //     #savedArticlesHolder {
-  //       width: 80%;
-  //     }
-  //   }
-  // }
-  // @media only screen and (max-width: 900px) {
-  //   #container {
-  //     #searchArticlesHolder {
-  //       width: 90%;
-  //     }
-  //     #savedArticlesHolder {
-  //       width: 90%;
-  //     }
-  //   }
-  // }
+  @media only screen and (max-width: 1330px) {
+    #container {
+      #searchArticlesHolder {
+        ul {
+          li {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            height: auto;
+            h2 {
+              padding-left: 0px;
+              margin-top: 0px;
+            }
+            img {
+              margin-top: 10px;
+            }
+
+            p {
+              width: 540px;
+              white-space: nowrap;
+              overflow-x: hidden;
+              text-overflow: ellipsis;
+            }
+          }
+        }
+      }
+      #savedArticlesHolder {
+        #savedResults {
+          ul {
+            li {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: space-between;
+              height: auto;
+            }
+            h2 {
+              padding-left: 0px;
+              margin-top: 0px;
+              padding: 0px;
+            }
+            img {
+              margin: 0px;
+              margin-bottom: 10px;
+            }
+            p {
+              padding: 13;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media only screen and (max-width: 1230px) {
+    #container {
+      #searchArticlesHolder {
+        ul {
+          li {
+            p {
+              width: 500px;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media only screen and (max-width: 1150px) {
+    #container {
+      #searchArticlesHolder {
+        ul {
+          li {
+            p {
+              width: 450px;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media only screen and (max-width: 1030px) {
+    #container {
+      #searchArticlesHolder {
+        ul {
+          li {
+            p {
+              width: 400px;
+            }
+          }
+        }
+      }
+      #savedArticlesHolder {
+        #savedResults {
+          ul {
+            h2 {
+              margin-bottom: 12;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media only screen and (max-width: 900px) {
+    #container {
+      #searchArticlesHolder {
+        width: 95%;
+        h1 {
+          font-size: 30px;
+        }
+        #searchResults {
+          li {
+            padding: 10px;
+
+            p {
+              width: auto;
+              white-space: unset;
+              overflow-x: unset;
+              text-overflow: unset;
+              padding: 0px;
+              margin-top: 10px;
+              text-align: center;
+            }
+            img {
+              width: 300px;
+              height: 180px;
+            }
+          }
+        }
+      }
+      #savedArticlesHolder {
+        width: 95%;
+        h1 {
+          font-size: 30px;
+        }
+        #savedResults {
+          li {
+            padding: 10px;
+            img {
+              width: 300px;
+              height: 180px;
+            }
+          }
+        }
+      }
+    }
+  }
   @media only screen and (max-width: 775px) {
     #container {
       #searchArticlesHolder {
@@ -349,10 +470,21 @@ body {
             width: 100%;
           }
         }
+        #searchResults {
+          ul {
+            li {
+              padding: 20px;
+            }
+          }
+        }
       }
       #savedArticlesHolder {
-        h1 {
-          font-size: 35px;
+        #savedResults {
+          ul {
+            li {
+              padding: 20px;
+            }
+          }
         }
       }
     }
@@ -363,6 +495,29 @@ body {
         #form {
           #submit {
             font-size: 10px;
+          }
+        }
+        #searchResults {
+          ul {
+            li {
+              img {
+                width: 260px;
+                height: 160px;
+              }
+            }
+          }
+        }
+      }
+      #savedArticlesHolder {
+        #savedResults {
+          ul {
+            li {
+              img {
+                margin-top: 10px;
+                width: 260px;
+                height: 160px;
+              }
+            }
           }
         }
       }

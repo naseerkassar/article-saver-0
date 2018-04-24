@@ -1,6 +1,5 @@
 import axios from "axios";
 import SearchArticle from "./SearchArticle";
-
 export default class SavedListItem {
   constructor(id, list, savedArticles, firebase) {
     this.id = id;
@@ -16,8 +15,6 @@ export default class SavedListItem {
     axios
       .get("https://nieuws.vtm.be/feed/articles?format=json&ids=" + this.id)
       .then(response => {
-        console.log(response);
-
         this.article = response.data.response.items[0];
         document.getElementById("saveLoading").style.display = "none";
         this.getArticleInfo();
