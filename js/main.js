@@ -3,12 +3,12 @@ import SearchArticle from "./components/SearchArticle";
 import SavedArticle from "./components/SavedArticle";
 
 var config = {
-  apiKey: "AIzaSyC0W55ACIMhUL5QceH6O1ruKk-7Bx2lECQ",
+  apiKey: "////",
   authDomain: "meraki-articl-saver.firebaseapp.com",
   databaseURL: "https://meraki-articl-saver.firebaseio.com",
   projectId: "meraki-articl-saver",
   storageBucket: "meraki-articl-saver.appspot.com",
-  messagingSenderId: "529330771528"
+  messagingSenderId: "///"
 };
 firebase.initializeApp(config);
 
