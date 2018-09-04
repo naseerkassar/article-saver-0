@@ -4,10 +4,10 @@ import SavedArticle from "./components/SavedArticle";
 
 var config = {
   apiKey: "////",
-  authDomain: "meraki-articl-saver.firebaseapp.com",
-  databaseURL: "https://meraki-articl-saver.firebaseio.com",
-  projectId: "meraki-articl-saver",
-  storageBucket: "meraki-articl-saver.appspot.com",
+  authDomain: "//",
+  databaseURL: "//",
+  projectId: "//",
+  storageBucket: "//",
   messagingSenderId: "///"
 };
 firebase.initializeApp(config);
